@@ -1,10 +1,10 @@
 {
-  "name": "@cbuk100011/mcp-time",
-  "version": "0.0.1",
+  "name": "@mcpcentral/mcp-time",
+  "version": "0.0.2",
   "description": "Time MCP server via HTTP",
   "type": "module",
   "bin": {
-    "mcp-time": "./dist/index.js"
+    "mcp-time": "dist/index.js"
   },
   "files": [
     "dist"
@@ -25,16 +25,16 @@
     "week",
     "year"
   ],
-  "author": "Cam10001110101",
+  "author": "mcpcentral",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Cam10001110101/mcp-server-http-time.git"
+    "url": "git+https://github.com/mcpcentral-io/mcp-time.git"
   },
   "bugs": {
-    "url": "https://github.com/Cam10001110101/mcp-server-http-time/LayerZero"
+    "url": "https://github.com/mcpcentral-io/mcp-time/issues"
   },
-  "homepage": "https://github.com/Cam10001110101/mcp-server-http-time#readme",
+  "homepage": "https://github.com/mcpcentral-io/mcp-time#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
     "dayjs": "^1.11.11",

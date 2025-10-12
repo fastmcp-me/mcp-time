@@ -23,7 +23,7 @@ export interface Env {
 // Create MCP server instance
 const server = new McpServer({
 	name: 'mcp-time',
-	version: '0.0.1',
+	version: '0.0.2',
 	capabilities: {
 		tools: {},
 	},
@@ -453,7 +453,7 @@ async function handleMcpRequest(request: any): Promise<any> {
 					},
 					serverInfo: {
 						name: 'mcp-time',
-						version: '0.0.1'
+						version: '0.0.2'
 					},
 					instructions: "This MCP server provides time-related tools including current time, timezone conversion, relative time calculation, and more."
 				}
@@ -625,8 +625,13 @@ export default {
 };
 
 // Run stdio mode if not in Cloudflare Workers environment
-// In Cloudflare Workers, there's no 'process' global or it's running in a worker context
-if (typeof process !== 'undefined' && process.argv) {
+// Check for actual Node.js environment (not Workers with nodejs_compat)
+const isNodeCLI = typeof process !== 'undefined' &&
+	process.argv &&
+	process.stdin &&
+	typeof process.stdin.on === 'function';
+
+if (isNodeCLI) {
 	runStdio().catch((error) => {
 		console.error('Fatal error in stdio mode:', error);
 		process.exit(1);

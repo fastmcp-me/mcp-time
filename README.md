@@ -36,10 +36,10 @@ Install the package globally or use with npx:
 
 ```bash
 # Global installation
-npm install -g @cbuk100011/mcp-time
+npm install -g @mcpcentral/mcp-time
 
 # Or use directly with npx
-npx @cbuk100011/mcp-time
+npx @mcpcentral/mcp-time
 ```
 
 ### Option 2: Use Remote Server (HTTP Mode)
@@ -62,7 +62,7 @@ Configure your MCP client (e.g., Claude Desktop) to use the stdio transport:
   "mcpServers": {
     "time-server": {
       "command": "npx",
-      "args": ["@cbuk100011/mcp-time"]
+      "args": ["@mcpcentral/mcp-time"]
     }
   }
 }
@@ -98,8 +98,8 @@ Configure your MCP client to use the remote HTTP endpoint:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/Cam10001110101/mcp-server-http-time.git
-    cd mcp-server-http-time
+    git clone https://github.com/mcpcentral-io/mcp-time.git
+    cd mcp-time
     ```
 
 2.  **Install Dependencies:**
@@ -229,9 +229,22 @@ Keep an eye out as more MCP clients adopt support for Streamable HTTP. Here are 
 
 ## Testing and Validation
 
-### MCP Inspector (HTTP Mode)
+### MCP Inspector Tools (HTTP Mode)
 
-The official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) tool provides a web-based interface to test your server.
+Test your server using these web-based inspection tools:
+
+#### MCPCentral Tools (Recommended)
+
+- **[MCPCentral Lab](https://lab.mcpcentral.io/)** - Interactive testing environment for MCP servers
+- **[MCPCentral Inspector](https://inspect.mcpcentral.io/)** - Streamable HTTP server inspector
+
+#### Official MCP Inspector
+
+The official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is also available:
+- Visit: https://github.com/modelcontextprotocol/inspector
+- Or run: `npx @modelcontextprotocol/inspector`
+
+#### Testing Steps
 
 1. **Start your server:**
    ```bash
@@ -241,11 +254,7 @@ The official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) 
    # Or use deployed URL: https://mcp.time.mcpcentral.io
    ```
 
-2. **Open MCP Inspector:**
-   - Visit: https://github.com/modelcontextprotocol/inspector
-   - Or run: `npx @modelcontextprotocol/inspector`
-
-3. **Configure connection:**
+2. **Connect with an inspector:**
    - Transport: **Streamable HTTP**
    - URL: `http://localhost:8787` or `https://mcp.time.mcpcentral.io`
    - Click **Connect**
@@ -256,10 +265,10 @@ Test the stdio transport directly:
 
 ```bash
 # Test initialization
-echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"test","version":"1.0"}}}' | npx @cbuk100011/mcp-time
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"test","version":"1.0"}}}' | npx @mcpcentral/mcp-time
 
 # Test tool call
-echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"current_time","arguments":{"timezone":"America/New_York"}}}' | npx @cbuk100011/mcp-time
+echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"current_time","arguments":{"timezone":"America/New_York"}}}' | npx @mcpcentral/mcp-time
 ```
 
 ### Available Tools to Test
@@ -315,5 +324,3 @@ The MCP Inspector provides the most comprehensive way to test your server before
 ## Authentication & Security Considerations
 
 ⚠️ **IMPORTANT: This example server has NO authentication or security measures implemented.**
-
-For production MCP servers, you should implement proper authentication as outlined in the [official MCP documentation](https://modelcontextprotocol.io/introduction#authentication)

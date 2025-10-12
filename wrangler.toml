@@ -1,4 +1,4 @@
-name = "mcp-time"
+name = "mcpcentral-mcp-time"
 main = "dist/index.js"
 compatibility_date = "2025-06-22"
 compatibility_flags = [ "nodejs_compat" ]
