@@ -6,6 +6,8 @@ A Model Context Protocol (MCP) server providing time-related tools with **dual-m
 
 This server allows LLMs to access various date/time functions through multiple connection methods.
 
+MCP Central Server Card: https://guide-gen.mcpcentral.io/servers/io-github-mcpcentral-io-mcp-time  
+
 ## Features
 
 Provides the following MCP tools:
