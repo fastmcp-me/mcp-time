@@ -46,6 +46,7 @@ wrangler.toml.bak
 
 # MCP Development
 .mcp/
+.mcp.json
 mcp-server.log
 *.mcp.log
 
