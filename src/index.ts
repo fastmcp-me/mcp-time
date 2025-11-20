@@ -23,7 +23,7 @@ export interface Env {
 // Create MCP server instance
 const server = new McpServer({
 	name: 'mcp-time',
-	version: '0.0.2',
+	version: '0.0.3',
 	capabilities: {
 		tools: {},
 	},
@@ -453,7 +453,7 @@ async function handleMcpRequest(request: any): Promise<any> {
 					},
 					serverInfo: {
 						name: 'mcp-time',
-						version: '0.0.2'
+						version: '0.0.3'
 					},
 					instructions: "This MCP server provides time-related tools including current time, timezone conversion, relative time calculation, and more."
 				}
