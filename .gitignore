@@ -50,6 +50,10 @@ wrangler.toml.bak
 mcp-server.log
 *.mcp.log
 
+# MCP Registry Authentication (DO NOT COMMIT)
+.mcpregistry_github_token
+.mcpregistry_registry_token
+
 # Testing
 coverage/
 *.lcov
